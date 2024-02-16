@@ -134,7 +134,6 @@ export const sendVerificationToken = async (req, res) => {
 export const register = async (req, res) => {
   try {
     console.log("Register");
-    // data fetch from request's body
     const { firstName, lastName, email, password, confirmPassword } = req.body;
 
     // validate sign-up data
@@ -219,6 +218,7 @@ export const register = async (req, res) => {
 
 // signin
 export const signIn = async (req, res) => {
+  console.log("user SgnIn");
   try {
     //get data from req body
     const { email, password } = req.body;

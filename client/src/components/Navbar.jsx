@@ -19,7 +19,7 @@ function MenuList({ user, onClick }) {
   };
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="relative flex items-center justify-center">
       <Menu as="div" className="inline-block ">
         <div className="flex">
           <Menu.Button className="inline-flex  gap-5 w-full rounded-md bg-[#f3eecee7] md:px-4 py-2 text-sm font-medium text-slate-700 hover:bg-opacity-10 ">
@@ -53,7 +53,7 @@ function MenuList({ user, onClick }) {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute z-50 mt-2 w-40 lg:left-[50%] lg:translate-x-[320%] lg:translate-y-[8%] rounded-md bg-[#e698db] shadow-lg focus:outline-none translate-y-[-10%] translate-x-[60%]">
+          <Menu.Items className="absolute z-50 mt-2 w-40 lg:left-[50%] lg:translate-x-[-20%] lg:translate-y-[8%] rounded-md bg-[#e698db] shadow-lg focus:outline-none translate-y-[-10%] translate-x-[60%]">
             <div className="p-1 ">
               <Menu.Item>
                 {({ active }) => (
@@ -126,7 +126,7 @@ const Navbar = () => {
           <div>
             <Link
               to="/"
-              className="bg-gradient-to-r from-[#ac2acc] via-[#d47fbc] to-[#d7384d] text-transparent bg-clip-text font-bold text-3xl"
+              className="bg-gradient-to-r from-[#ac2acc] via-[#d47fbc] to-[#d7384d] text-transparent bg-clip-text font-bold text-3xl pl-10"
             >
               hushh.ai
             </Link>

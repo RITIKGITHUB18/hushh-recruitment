@@ -73,6 +73,9 @@ const SignUp = ({ open, setOpen }) => {
         const data = { token, ...userData };
         dispatch(Login(data));
         localStorage.setItem("userInfo", JSON.stringify(data));
+        setTimeout(() => {
+          window.location.reload();
+        }, 90000);
         window.location.replace(from);
       }
     } catch (error) {
