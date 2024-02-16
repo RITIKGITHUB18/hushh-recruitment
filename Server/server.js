@@ -38,3 +38,9 @@ app.use(errorMiddleware);
 app.listen(PORT, () => {
   console.log(`HUSHH Server running on port ${PORT}`);
 });
+app.get(()=>{
+  res.send({
+    success:true,
+    message:"Backend is live and running successfully"
+  })
+})
