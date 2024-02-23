@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEfect} from "react";
 import { Menu } from "@headlessui/react";
 import CustomButton from "./CustomButton";
 import { apiRequest } from "../utils";
@@ -39,6 +39,16 @@ const JobApplication = ({ app, onViewMore }) => {
       setIsFetching(false);
     }
   };
+
+  useEffect(()=>{
+    window.addEventListener('load',()=>{window.location.reload();})
+
+    return ()=>{
+      window.removeEventlistener('load',()=>{
+        window.location.reload();
+      })
+    }
+  },[]);
 
   const handleOpenResume = () => {
     window.open(resume, "_blank");
