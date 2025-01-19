@@ -24,6 +24,8 @@ const ViewApplication = () => {
         method: "GET",
       });
       setData(res?.data);
+      console.log("ViewApplication Data", data);
+      console.log("ViewApplication Res?.data", res?.data);
       setIsFetching(false);
     } catch (error) {
       console.log("Error: ", error);
@@ -40,6 +42,7 @@ const ViewApplication = () => {
 
   useEffect(() => {
     fetchViewApplication();
+    console.log("ViewApplication Data in useEffect", data);
   }, []);
   return (
     <div className="w-full h-[calc(100vh-3.5rem)]">

@@ -9,7 +9,6 @@ import dbConnection from "./config/dbConnection.js";
 import cookieParser from "cookie-parser";
 import { cloudinaryConnect } from "./config/cloudinary.js";
 
-// import authRoutes from "./routes/authRoutes.js";
 import router from "./routes/index.js";
 import errorMiddleware from "./middleware/errorMiddleware.js";
 const app = express();
@@ -33,7 +32,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(router);
 app.use(errorMiddleware);
-// app.use("/api/v1/auth", authRoutes);
 
 app.listen(PORT, () => {
   console.log(`HUSHH Server running on port ${PORT}`);

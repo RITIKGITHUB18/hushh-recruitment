@@ -37,26 +37,59 @@ const JobDetail = () => {
     navigate(`/view-application/${id}`);
   };
 
+  // const handleDeletePost = async () => {
+  //   setIsFetching(true);
+  //   try {
+  //     const confirmed = window.confirm("Delete Job Post?");
+  //     if (confirmed) {
+  //       console.log("Job Id to delete:", job?._id);
+  //       console.log("token to delete:", user?.token);
+
+  //       const res = await apiRequest({
+  //         // url: `/jobs/delete-job/${job?._id}`,
+  //         url: `/jobs/delete-job/${id}`,
+  //         token: user?.token,
+  //         method: "DELETE",
+  //       });
+
+  //       console.log("Delete response: ", res);
+
+  //       if (res?.status === "success") {
+  //         alert(res?.message);
+  //         window.location.replace("/");
+  //       } else {
+  //         alert("Job deletion is failed, please try again");
+  //       }
+  //     }
+  //     setIsFetching(false);
+  //   } catch (error) {
+  //     setIsFetching(false);
+  //     console.log("Error: ", error);
+  //     alert(
+  //       "An error occurred while deleting the job post. Please try again later."
+  //     );
+  //   }
+  // };
+
   const handleDeletePost = async () => {
     setIsFetching(true);
     try {
-      const confirmed = window.confirm("Delete Job Post?");
-      if (confirmed) {
-        console.log("Job Id to delete:", job?._id);
-        console.log("token to delete:", user?.token);
+      console.log("Job Id to delete:", job?._id);
+      console.log("Token to delete:", user?.token);
 
-        const res = await apiRequest({
-          url: `/jobs/delete-job/${job?._id}`,
-          token: user?.token,
-          method: "DELETE",
-        });
-        console.log("Delete response: ", res);
-        if (res?.status === "success") {
-          alert(res?.message);
-          window.location.replace("/");
-        } else {
-          alert("Job deletion is failed, please try again");
-        }
+      const res = await apiRequest({
+        url: `/jobs/delete-job/${id}`, // Assuming `id` is the correct job ID
+        token: user?.token,
+        method: "DELETE",
+      });
+
+      console.log("Delete response: ", res);
+
+      if (res?.status === "success") {
+        alert(res?.message);
+        window.location.replace("/");
+      } else {
+        alert("Job deletion failed, please try again.");
       }
       setIsFetching(false);
     } catch (error) {

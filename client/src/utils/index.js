@@ -10,6 +10,7 @@ export const API = axios.create({
 
 export const apiRequest = async ({ url, token, data, method }) => {
   try {
+    console.log("Request URL: ", url);
     const result = await API({
       url: url,
       method: method || "GET",

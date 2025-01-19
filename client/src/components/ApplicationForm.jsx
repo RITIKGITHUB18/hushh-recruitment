@@ -63,7 +63,7 @@ const ApplicationForm = ({ job, onClose }) => {
         localStorage.setItem("userInfo", JSON.stringify(updatedUser));
         setTimeout(() => {
           window.location.reload();
-        }, 300000);
+        }, 3000);
       }
       setSubmitting(false);
     } catch (error) {

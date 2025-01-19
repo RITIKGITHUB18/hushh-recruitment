@@ -256,7 +256,7 @@ export const getJobById = async (req, res, next) => {
 
 export const deleteJobPost = async (req, res, next) => {
   try {
-    console.error("JobDeletePost");
+    console.error("Job Delete Post");
     const { jobId } = req.params;
     console.log(jobId);
     const companyId = req.body.user.userId; // Use req.user directly to get the companyId
